@@ -1,0 +1,20 @@
+'''
+    利用random库和turtle库，在屏幕上绘制5个圆圈，圆圈的半径和圆初始坐标由randint()函数产生
+    圆的X和Y的坐标范围在[-100,100]之间：半径的大小范围在[20,50]之间，圆圈的颜色随机在color列表里选择
+'''
+
+import turtle as t
+import random as r
+
+color = ['red','orange','blue','green','purple']
+r.seed(1)
+for i in range(5):
+    rad = r.randint(20,50)
+    x0 = r.randint(-100,100)
+    y0 = r.randint(-100,100)
+    t.color(r.choice(color))
+    t.penup()
+    t.goto(x0,y0)
+    t.pendown()
+    t.circle(rad)
+t.done()
