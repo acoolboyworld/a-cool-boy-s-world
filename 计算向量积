@@ -1,0 +1,17 @@
+'''
+    计算lt1跟lt2列表的向量积；计算公式
+    X = [x1,x2,x3]和Y = [y1,y2,y3]
+    k = x1*y1+x2*y2+x3*y3
+'''
+img = [0.244, 0.832, 0.903, 0.145, 0.26, 0.452]
+filter = [0.1, 0.8, 0.1]
+
+res = []
+for i in range(len(img)-2):
+    k = 0
+    for j in range(len(filter)):
+        k+=filter[j] * img[j+i]
+        print('k = {:.3f} ,filter[{}] = {:.3f} ,img[{}{}{}] = {:.3f}'.format(k,j,filter[j],i,'+',j,img[i+j]))
+    res.append(k)
+for r in res:
+    print('{:<10.3f}'.format(r),end='')
